@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dynamic Web Authoring – COM 353 Introduction to Web Development</title>
+  </head>
+  <body>
+    <h1 id="welcomeTitle">Welcome to WorldBooks</h1> <!--Added id -->
+    <img src="../media/jQueryImg.jpg" alt="jQuery Image"> <!-- already had alt description -->
+    <hr> </hr>
+    <h2 id="formTitle">Customer Information:</h2> <!--Added id -->
+
+    <form name="WorldBooks">
+      Customer Name: <input type="text" name=""><br><br>
+      Street Address: <input type="text" name=""><br><br>
+      Email Address: <input type="text" name=""><br><br>
+      Post Code: <input type="text" name=""><br><br>
+      Phone Number: <input type="text" name=""><br>
+      <h3 id="tableTitle">Shopping Cart</h3> <!--Added id -->
+      <table border="3" bordercolor="black" cellpadding="10" summary="Books order summary, book title, author, price and quantity on display"> <!--Added summary -->
+        <tr>
+          <th scope="col">Book</th> <!--Created new column Added scope -->
+          <th scope="col">Book Title</th> <!--Added scope -->
+          <th scope="col">Author</th> <!--Added scope -->
+          <th scope="col">Price</th> <!--Added scope -->
+          <th scope="col">Quantity</th> <!--Added scope -->
+        </tr>
+        <tr>
+          <td scope="row">1</td> <!--Added scope -->
+          <td>The Genius of Photography</td>
+          <td>Gerry Badger</td>
+          <td>£25.00</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td scope="row">2</td> <!--Added scope -->
+          <td>A History of Modern Britain</td>
+          <td>Andrew Marr</td>
+          <td>£14.99</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td scope="row">3</td> <!--Added scope -->
+          <td>Wye Valley (Collins New Naturalist Library)</td>
+          <td>Andrew Marr</td>
+          <td>£14.99</td>
+          <td>4</td>
+        </tr>
+      </table>
+      <h3 id="paymentTitle">Payment Method</h3> <!--Added id -->
+        <label id="paymentVisa"> <!-- added label and id -->
+          <input type="radio" name="payment" value="visa">Visa
+        </label>
+        <label id="paymentMasterCard"> <!-- added label and id -->
+          <input type="radio" name="payment" value="mastercard">Master Card
+        </label>
+        <label id="paymentSwitchDebit"> <!-- added label and id -->
+          <input type="radio" name="payment" value="switchdebit">Switch/Debit
+        </label>
+        <label id="paymentCheque"> <!-- added label and id -->
+          <input type="radio" name="payment" value="cheque">Cheque
+        </label>
+      <h3 id="contactTitle">I would like to be contact by:</h3> <!--Added id -->
+      <label id="contactEmail"> <!-- added label and id -->
+        <input type="checkbox" name="contact" value="email">Email
+      </label>
+      <label id="contactMobile"> <!-- added label and id -->
+        <input type="checkbox" name="contact" value="mobile">Mobile
+      </label>
+      <label id="contactPost"> <!-- added label and id -->
+        <input type="checkbox" name="contact" value="post">Post
+      </label>
+      <label id="contactVisit"> <!-- added label and id -->
+        <input type="checkbox" name="contact" value="visit">Visit
+      </label>
+        <br />
+
+        <p id="commentTitle">Other Comments</p> <!--Added id -->
+        <textarea rows="4" cols="50">Other comments:
+        </textarea>
+
+        <br />
+
+      <input type="submit" value="Submit"> <input type="reset" value="Submit">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dynamic Web Authoring – COM 353 Introduction to Web Development</title>
+  </head>
+  <body>
+    <h1>Welcome to WorldBooks</h1>
+    <img src="../media/jQueryImg.jpg" alt="jQuery Image">
+    <hr> </hr>
+    <h2>Customer Information:</h2>
+
+    <form name="WorldBooks">
+      Customer Name: <input type="text" name=""><br><br>
+      Street Address: <input type="text" name=""><br><br>
+      Email Address: <input type="text" name=""><br><br>
+      Post Code: <input type="text" name=""><br><br>
+      Phone Number: <input type="text" name=""><br>
+      <h3>Shopping Cart</h3>
+      <table border="3" bordercolor="black" cellpadding="10">
+        <tr>
+          <th>Book Title</th>
+          <th>Author</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td>The Genius of Photography</td>
+          <td>Gerry Badger</td>
+          <td>£25.00</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>A History of Modern Britain</td>
+          <td>Andrew Marr</td>
+          <td>£14.99</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>Wye Valley (Collins New Naturalist Library)</td>
+          <td>Andrew Marr</td>
+          <td>£14.99</td>
+          <td>4</td>
+        </tr>
+      </table>
+      <h3>Payment Method</h3>
+        <input type="radio" name="payment" value="visa">Visa
+        <input type="radio" name="payment" value="mastercard">Master Card
+        <input type="radio" name="payment" value="switchdebit">Switch/Debit
+        <input type="radio" name="payment" value="cheque">Cheque
+      <h3>I would like to be contact by:</h3>
+        <input type="checkbox" name="contact" value="email">Email
+        <input type="checkbox" name="contact" value="mobile">Mobile
+        <input type="checkbox" name="contact" value="post">Post
+        <input type="checkbox" name="contact" value="visit">Visit
+
+        <br />
+
+        <p>Other Comments</p>
+        <textarea rows="4" cols="50">Other comments:
+        </textarea>
+
+        <br />
+
+      <input type="submit" value="Submit"> <input type="reset" value="Submit">
+    </form>
+  </body>
+</html>

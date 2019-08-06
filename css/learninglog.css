@@ -1,0 +1,70 @@
+/*
+color scheme
+
+purple : #240041
+burgandy: #900048
+light red: #ff4057
+orange: #ff8260
+
+*/
+
+html {
+  font-family: Verdana, "Geneva", sans-serif;
+  background-color: #ff8260;
+}
+
+
+header {
+  background-color: #240041;
+  color: white;
+  padding: 2em 0;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+header a {
+  color: #ff8260;
+}
+.jumbotron {
+  background-color: #240041;
+}
+hr {
+  border-color: #ff8260
+}
+
+a {
+  text-decoration: none;
+  color: #010059;
+}
+div {
+  width: 80%;
+  padding: 2em 1em;/*2em top and bottom and 1em left and right*/
+}
+main {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.week {
+  background-color: #ff4057;
+  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+}
+#learninglog .week a {
+  margin: 0.5em 1em;
+  padding: 1em;
+  border: 2px solid #240041;
+  background-color: #ff8260;
+}
+#learninglog h2 {
+  margin-top: 0;
+  padding-bottom: 1em;
+}
+.w1 span{
+  color: gold;
+}

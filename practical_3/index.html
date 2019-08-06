@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Practical 3 task 1: Image Swap</title>
+    <link href="../css/basic.css" type="text/css" rel="stylesheet">
+  </head>
+  <body bgColor="white">
+      <a href="#" onmouseover="document.photo.src='../media/IMAGE_1.jpg';" onmouseout="document.photo.src='../media/IMAGE_0.jpg';">
+        <img src="../media/IMAGE_0.jpg" width="600" height="400" name="photo" border="0"></img>
+      </a>
+      <br />
+      <img src="../media/domStructure.png" alt="DOM Structure Illustration">
+
+      <br />
+
+      <div class="rollover">
+        <a href="#" onmouseover="document.body.style.backgroundColor = 'red';" onmouseout="document.body.style.backgroundColor = 'white';">
+          <div style="width: 100px; height: 200px; border: 2px solid black;">Rollover to change background colour to red</div>
+        </a>
+        <a href="#" onmouseover="document.body.style.backgroundColor = '#ffff00';" onmouseout="document.body.style.backgroundColor = 'white';">
+          <div style="width: 100px; height: 200px; border: 2px solid black;">Rollover tochange background colour to yellow #ffff00</div>
+        </a>
+        <a href="#" onmouseover="document.body.style.backgroundColor = 'rgb(0,0,255)';" onmouseout="document.body.style.backgroundColor = 'white';">
+          <div style="width: 100px; height: 200px; border: 2px solid black;">Rollover tochange background colour to blue rgb (0,0,255)</div>
+        </a>
+      </div>
+
+  </body>
+</html>

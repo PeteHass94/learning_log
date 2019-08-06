@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Practical 3: JavaScript II</title>
+    <!-- add individual css and js files -->
+    <link href="../css/basicp4.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Practical 4, sheet practical3: JavaScript II</h1>
+    <div class="task1">
+      <h3 class="">Task 1</h3>
+      <p class="q">var myAge =45;</p>
+      <p class="a">the Variable myAge is set to 45. Output 45 </p>
+      <p class="q">myAge +=4;</p>
+      <p class="a">the Variable myAge increases by 4 and overides it. The new Output is 49 </p>
+      <p class="q">myAge ++;</p>
+      <p class="a">the Variable myAge increases by 1 and overides it. The new Output is 50 </p>
+      <p class="q">myAge == 40+10;</p>
+      <p class="a">the Variable myAge will check if is equal (40 + 10). The Output is true </p>
+      <p class="q">myAge <=38;</p>
+      <p class="a">the Variable myAge will check it is less than or equal to 38. The new Output is false </p>
+      <p class="q">myAge =40;</p>
+      <p class="a">the Variable myAge is set to 40. The new Output is 40 </p>
+    </div>
+    <div class="task2">
+      <h3>Task 2</h3>
+      <p>script in input
+        var myAge =45;
+        myAge += 4;
+        myAge = "My age is "+ myAge;
+        <br> *then input:*
+        myAge ++;
+        myAge == 40+10;
+        myAge <=38;
+        myAge = 40;
+
+      </p>
+      <p class="a">The value of myAge was 49 initially. Then rest of results were as expected</p>
+      <script language=javascript type=text/javascript>
+        var myAge =45;
+        myAge += 4;
+        myAge ++;
+        myAge == 40+10;
+        myAge <=38;
+        myAge =40;
+        myAge = "My age is "+ myAge;
+        window.document.write(myAge);
+      </script>
+    </div>
+    <div class="task3">
+      <h3>Task 3</h3>
+      <p class="q">script input: <br>var myTextContainer = "A web browser ";
+      myTextContainer += "will follow your instructions ";
+      myTextContainer += "exactly and without argument";</p>
+      <p class="a">output text expected: "A web browser will follow your instructions exactly and without argument"</p><br>
+      <script language=javascript type=text/javascript>
+        var myTextContainer = "A web Browser ";
+        myTextContainer += "will follow your instructions ";
+        myTextContainer += "exactly and without argument";
+        window.document.write(myTextContainer);
+      </script>
+    </div>
+    <div class="task4">
+      <h1>Task 4</h1>
+      <p class="a">wrong code below:</p>
+      <pre>
+        <code>
+1)          &lthtml&gt
+2)              &lthead&gt
+3)              &lttitle&gt Finding Errors&lt/title&gt
+4)              &lt/head&gt
+5)              &ltbody bgColour="yellow" text="blue"&gt
+6)              &ltscript type = "text/javascript"
+7)              var course = imd/ict;
+8)              var type = "full time"
+9)              var year = 2;
+10)              var 1function = "learning";
+11)              year +=2
+12)              document.write("I am " + 1function +" "+ corse + " for "+
+13)              year +" years,"+type);
+14)              &lt/script&gt
+15)          &lt/body&gt
+16)          &lt/html&gt
+        </code>
+      </pre>
+      <p class="q">The 6 errors are: <br>
+        line 6: missing &gt and also "language ="javascript" is also missing", <br>
+        line 7: imd/ict need "", <br>
+        line 8: missing semi colon at the end ;, <br>
+        line 10: 1function is not a valid variable name. changed to function1 as function is a keyword in JS, <br>
+        line 11: another semi colon missing at the end;, <br>
+        line 12: window.document.write() is the correct javascript function, also course is spelt wrong. <br>
+
+       </p>
+       <p class="a">Correct code below:</p>
+       <pre>
+         <code>
+ 1)          &lthtml&gt
+ 2)              &lthead&gt
+ 3)              &lttitle&gt Finding Errors&lt/title&gt
+ 4)              &lt/head&gt
+ 5)              &ltbody bgColour="yellow" text="blue"&gt
+ 6)              &ltscript language="javascript type="text/javascript"&gt
+ 7)              var course = "imd/ict";
+ 8)              var type = "full time";
+ 9)              var year = 2;
+ 10)              var function1 = "learning";
+ 11)              year +=2;
+ 12)              window.document.write("I am " + function1 +" "+ course + " for "+
+ 13)              year +" years, "+type);
+ 14)              &lt/script&gt
+ 15)          &lt/body&gt
+ 16)          &lt/html&gt
+         </code>
+       </pre>
+       <p class="a">And the script produces:</p>
+       <script language="javascript" type="text/javascript">
+          var course = "imd/ict";
+          var type = "full time";
+          var year = 2;
+          var function1 = "learning";
+          year +=2;
+          window.document.write("I am " + function1 + " " + course + " for " + year + " years, "+ type);
+       </script>
+
+    </div>
+    <div class="task5">
+      <h1>Task 5</h1>
+      <a href="../index.html">click to return to learning learninglog</a>
+    </div>
+  </body>
+</html>
