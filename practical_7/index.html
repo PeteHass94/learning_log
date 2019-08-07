@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Practical 6: Conditional Statements</title>
+    <!-- add individual css and js files -->
+    <link href="../css/basicp4.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Practical 7, sheet practical 6: Conditional Statements</h1>
+    <div class="task1a">
+      <h3>task 1: Contional Branch Statements - checking a text input field</h3>
+      <p class="q">Modify Q3d from practical4_q3d.html (I think this means practical 5 Q3d (practical 4 from blackboard))</p>
+      <form>
+        Name:<br>
+        <input type="text" name="firstname" id="name"><br>
+        <button type="button" name="button" onclick="WelcomeTex()">Welcome Button</button>
+      </form>
+      <p class="a" id="task1aAns"></p>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+    function WelcomeTex() {
+      ans = document.getElementById("task1aAns");
+      name= document.getElementById("name").value;
+      if (name.length>0) {
+        ans.innerHTML = name + ", Welcome to JavaScript homepage!";
+      }
+      else
+      {
+        alert("please enter your name!");
+      }
+    }
+    </script>
+
+
+    <div class="task2">
+      <h3 class="">Task 2 - Conditional Branch Statements - checking radio button input</h3>
+      <p class="q">Modify the script in practical5_Q3b (practical 4 from blackboard) it will display the university and information</p>
+      <p class="a"></p>
+      <select id="university">
+        <option>Select University</option>
+        <option>Ulster University</option>
+        <option>Queen's University</option>
+      </select>
+      <button type="button" name="button" onclick="displayInfo()">Display University Information</button>
+
+      <p class="a" id="task2aAns"></p>
+    </div>
+      <script language=javascript type=text/javascript>
+      function displayInfo(){
+        uni = document.getElementById("university").selectedIndex;
+        ans = document.getElementById("task2aAns");
+        console.log(uni);
+        if (uni == 1)
+        {
+          ans.innerHTML = "Ulster University, legally the University of Ulster, is a multi-campus public university located in Northern Ireland. It is often referred to informally and unofficially as Ulster, or by the abbreviation UU.";
+        }
+        else if (uni == 2)
+        {
+          ans.innerHTML = "Queen's University Belfast is a public research university in Belfast, Northern Ireland. The university was chartered in 1845, and opened in 1849 as Queen's College, Belfast. Queen's offers academic degrees at various levels and across a broad subject range, with over 300 degree programmes available. ";
+        }
+        else {
+          alert("please select a university!");
+        }
+      }
+      </script>
+    <div class="task3a">
+      <h3>task 3: Contional Branch Statements - checking grades</h3>
+      <p class="q">Write a JavaScript application to calculate the average of 4 marks. <br>
+        Use 4 input text fields to collect mark1, mark2, mark3 and mark4 and output the average mark.
+      </p>
+      <form>
+        Mark 1:<br>
+        <input type="text" name="firstname" id="mark1"><br>
+        Mark 2:<br>
+        <input type="text" name="firstname" id="mark2"><br>
+        Mark 3:<br>
+        <input type="text" name="firstname" id="mark3"><br>
+        Mark 4:<br>
+        <input type="text" name="firstname" id="mark4"><br>
+        <button type="button" name="button" onclick="FindAvg()">Find Average</button>
+      </form>
+      <p class="a" id="task3aAns"></p>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+    function FindAvg() {
+      ans = document.getElementById("task3aAns");
+      mark1 = document.getElementById("mark1").value;
+      mark2 = document.getElementById("mark2").value;
+      mark3 = document.getElementById("mark3").value;
+      mark4 = document.getElementById("mark4").value;
+      console.log(mark1)
+      console.log(mark2)
+      console.log(mark3)
+      console.log(mark4)
+      if (mark1.length == 0 || mark2.length == 0 || mark3.length == 0 || mark4.length == 0) {
+        alert("please enter all the marks! in 3a");
+      }
+      else
+      {
+        sum = +mark1 + +mark2 + +mark3 + +mark4;
+        average = +sum / 4;
+        ans.innerHTML = average;
+      }
+    }
+    </script>
+    <div class="task3b">
+      <h3>task 3: Contional Branch Statements - checking grades</h3>
+      <p class="q">Classification of the average marks <br>
+      </p>
+      <form>
+        Mark 1:<br>
+        <input type="text" name="firstname" id="mark1b"><br>
+        Mark 2:<br>
+        <input type="text" name="firstname" id="mark2b"><br>
+        Mark 3:<br>
+        <input type="text" name="firstname" id="mark3b"><br>
+        Mark 4:<br>
+        <input type="text" name="firstname" id="mark4b"><br>
+        <button type="button" name="button" onclick="FindGrade()">Find Average</button>
+      </form>
+      <p class="a" id="task3bAns"></p>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+    function FindGrade() {
+      ans = document.getElementById("task3bAns");
+      mark1 = document.getElementById("mark1b").value;
+      mark2 = document.getElementById("mark2b").value;
+      mark3 = document.getElementById("mark3b").value;
+      mark4 = document.getElementById("mark4b").value;
+      if (mark1.length == 0 || mark2.length == 0 || mark3.length == 0 || mark4.length == 0) {
+        alert("please enter all the marks!");
+      }
+      else
+      {
+        sum = +mark1 + +mark2 + +mark3  + +mark4;
+        average = +sum / 4;
+        if (average > 90 && average <= 100) {
+          ans.innerHTML = "You got an A, your average mark is " + average + ".";
+        }
+        else if (average > 80 && average <= 90) {
+          ans.innerHTML = "You got a B, your average mark is " + average + ".";
+        }
+        else if (average > 70 && average <= 80) {
+          ans.innerHTML = "You got a C, your average mark is " + average + ".";
+        }
+        else if (average > 60 && average <= 70) {
+          ans.innerHTML = "You got a D, your average mark is " + average + ".";
+        }
+        else if (average < 60) {
+          ans.innerHTML = "You got an E, failed, your average mark is " + average + ".";
+        }
+
+      }
+    }
+    </script>
+    <div class="task3c">
+      <h3>task 3: Contional Branch Statements - checking grades</h3>
+      <p class="q">Feedback on the achieved grade. <br>
+      </p>
+      <form>
+        Mark 1:<br>
+        <input type="text" name="firstname" id="mark1c"><br>
+        Mark 2:<br>
+        <input type="text" name="firstname" id="mark2c"><br>
+        Mark 3:<br>
+        <input type="text" name="firstname" id="mark3c"><br>
+        Mark 4:<br>
+        <input type="text" name="firstname" id="mark4c"><br>
+        <button type="button" name="button" onclick="FeedbackGrade()">Find Average</button>
+      </form>
+      <p class="a" id="task3cAns"></p>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+    function FeedbackGrade() {
+      ans = document.getElementById("task3cAns");
+      //var grade;
+      mark1 = document.getElementById("mark1c").value;
+      mark2 = document.getElementById("mark2c").value;
+      mark3 = document.getElementById("mark3c").value;
+      mark4 = document.getElementById("mark4c").value;
+
+
+      if (mark1.length == 0 || mark2.length == 0 || mark3.length == 0 || mark4.length == 0) {
+        alert("please enter all the marks!");
+      }
+      //extra checkboxes
+      else if (mark1 < 0 || mark2 < 0 ||  mark3 < 0 || mark4 < 0)
+        alert("marks have to be above zero");
+      else if (mark1 > 100 || mark2 > 100 ||  mark3 > 100 || mark4 > 100)
+        alert("marks have to be less than 100");
+      else
+      {
+        sum = +mark1 + +mark2 + +mark3  + +mark4;
+        average = +sum / 4;
+        switch (true) {
+          case (average>90):
+            ans.innerHTML = "A, display: Outstanding!";
+            break;
+        case (average>80):
+            ans.innerHTML = "B, display: Very Good!";
+            break;
+        case (average>70):
+            ans.innerHTML = "C, display: Fairly Good!";
+            break;
+        case (average>60):
+            ans.innerHTML = "D, display: Doing Okay!";
+            break;
+        case (average<=60):
+            ans.innerHTML = "E, display: Need to Work much Harder!";
+            break;
+        default:
+          alert("error in the marks!");
+        }
+
+      }
+    }
+    </script>
+    <div class="task4">
+      <h1>Task 4</h1>
+      <a href="../index.html">click to return to learning learninglog</a>
+    </div>
+
+  </body>
+</html>

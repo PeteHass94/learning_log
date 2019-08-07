@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Practical 6: Conditional Statements</title>
+    <!-- add individual css and js files -->
+    <link href="../css/basicp4.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Practical 7, sheet practical 6: Conditional Statements</h1>
+    <div class="task1a">
+      <h3>task 1: Contional Branch Statements - checking a text input field</h3>
+      <p class="q">Modify Q3d from practical4_q3d.html (I think this means practical 5 Q3d (practical 4 from blackboard))</p>
+      <form>
+        Name:<br>
+        <input type="text" name="firstname" id="name"><br>
+        <button type="button" name="button" onclick="WelcomeTex()">Welcome Button</button>
+      </form>
+      <p class="a" id="task1aAns"></p>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+    function WelcomeTex() {
+      ans = document.getElementById("task1aAns");
+      name= document.getElementById("name").value;
+      if (name.length>0) {
+        ans.innerHTML = name + ", Welcome to JavaScript homepage!";
+      }
+      else
+      {
+        ans.innerHTML = "please enter a name!";
+      }
+    }
+    </script>
+
+  </body>
+</html>
