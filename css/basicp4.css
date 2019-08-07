@@ -11,3 +11,12 @@ p {
 .a {
   margin-left: 3em;
 }
+
+form
+{
+  margin-left: 1em;
+
+}
+form input, form label {
+  margin-bottom: 0.75em;
+}
