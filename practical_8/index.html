@@ -9,28 +9,132 @@
   <body>
     <h1>Practical 8, sheet practical 7: Nested Looping and Validation</h1>
     <p class="q">The Code provided produces a multiplication table of 1 to 5 along the top, multiplied by 1 to 3 along the bottom</p>
+
     <table border="3" cellpadding = "6">
         <script language="javascript">
         for (j=1; j<=3; j++) {
-         document.write('<tr>');
+         window.document.write('<tr>');
         for (i=1; i<=5; i++) {
-          if (9 == +i * +j){
-            document.write('<td align="right" style="background: yellow;">',i*j,'</td>');
+          //an alternative to the 2nd script
+          /*if (9 == +i * +j){
+            window.document.write('<td align="right" style="background: yellow;">',i*j,'</td>');
           }
-          else
-          document.write('<td align="right">',i*j,'</td>');
+          else */
+          window.document.write('<td align="right" id="',i*j,'">',i*j,'</td>');
          }
          document.write("</tr>\n");
         }
         </script>
-    <div class="task1">
-      <h3 class="">Task 1 - working with Arrays</h3>
-
+    </table>
+    <p class="q">Search for '9' from the table.</p>
+    <input type="text" id="search" value="9"> <br>
+    <button type="button" name="button" onclick="searchNumber()">Search</button>
+    <script language="javascript" type="text/javascript">
+      function searchNumber() {
+        number = document.getElementById("search").value;
+        document.getElementById(number).style.backgroundColor = "yellow";
+      }
+    </script>
+    <div class="task2">
+      <h3 class="">Task 2 car insurance</h3>
+      <p class="q">Calculate car insurance class based on age and martial status</p>
       <p class="a"></p>
+      <form class="carIns" action="" method="post">
+        First Name: <br>
+        <input type="text" name="fname" id="fname" value=""><br>
+        Surname: <br>
+        <input type="text" name="sname" id="sname" value=""><br>
+        Age: <br>
+        <input type="text" name="age" id="age" value=""><br>
+        Marrital Status: <br>
+        <select id="marry">
+          <option>Select status</option>
+          <option>Single</option>
+          <option>Married</option>
+        </select> <br>
+        <button type="button" name="button" onclick="insClass()">Check Insurance Class</button>
+      </form>
+      <p class="a" id="task2ans"></p>
     </div>
       <script language=javascript type=text/javascript>
+        function insClass() {
+          ans = document.getElementById("task2ans");
 
+          fname = document.getElementById("fname").value;
+          sname = document.getElementById("sname").value;
+          age = document.getElementById("age").value;
+          marry = document.getElementById("marry").selectedIndex;
+          var iclass;
+            if (age >= 30 && marry == 2)
+              iclass = 1;
+            else if (age >= 30 && marry == 1)
+              iclass = 2;
+            else if (age < 30 && marry == 2)
+              iclass = 3;
+            else if (age < 30 && marry == 1)
+              iclass = 4;
+            else {
+              alert("Fill out form correctly please");
+              }
+            ans.innerHTML = "class " + iclass;
+          }
       </script>
+      <div class="task3">
+        <h3 class="">Task 3 car insurance validation</h3>
+        <p class="q">Validation of Car insurance form</p>
+        <p class="a"></p>
+        <form class="carIns" action="insClass3()" method="post">
+          First Name: <br>
+          <input type="text" name="fname" id="fname3" value=""><br>
+          Surname: <br>
+          <input type="text" name="sname" id="sname3" value=""><br>
+          Age: <br>
+          <input type="number" min="17" step="1" name="age" id="age3" value=""><br>
+          Marrital Status: <br>
+          <select id="marry3">
+            <option>Select status</option>
+            <option>Single</option>
+            <option>Married</option>
+          </select> <br>
+          <button type="button" name="button" onclick="insClass3()">Check Insurance Class</button>
+        </form>
+        <p class="a" id="task3ans"></p>
+      </div>
+        <script language=javascript type=text/javascript>
+          function insClass3() {
+            ans = document.getElementById("task3ans");
+            var letters = /^[A-Za-z]+$/;
+            fname = document.getElementById("fname3").value;
+            sname = document.getElementById("sname3").value;
+            age = document.getElementById("age3").value;
+            marry = document.getElementById("marry3").selectedIndex;
+              var iclass;
+              if (fname.match(letters) && sname.match(letters)) {
+                if (age >= 30 && marry == 2)
+                  iclass = 1;
+                else if (age >= 30 && marry == 1)
+                  iclass = 2;
+                else if (age < 30 && marry == 2)
+                  iclass = 3;
+                else if (age < 30 && marry == 1)
+                  iclass = 4;
+                else {
+                  alert("Fill out form correctly please");
+                  ans.innerHTML = "invalid info";
+                  }
+                ans.innerHTML = "class " + iclass;
+              }
+              else {
+                alert("First Name or Surname Enterred inccorrectly")
+                ans.innerHTML = "invalid info";
+              }
+
+            }
+        </script>
+        <div class="task4">
+          <h1>Task 4</h1>
+          <a href="../index.html">click to return to learning learninglog</a>
+        </div>
 
   </body>
 </html>
