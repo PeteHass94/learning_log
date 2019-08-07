@@ -20,3 +20,7 @@ form
 form input, form label {
   margin-bottom: 0.75em;
 }
+textarea {
+  width: 80%;
+  height: 10em;
+}

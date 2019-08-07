@@ -10,26 +10,245 @@
     <h1>Practical 9, sheet practical 8: Form Validation</h1>
     <div class="task1">
       <h3 class="">Task 1 - Form Validation with Arrays</h3>
-      <p class="q">Create form to survey the users favourite music whilst asking for their for name, phone number, and favourite <s>book</s> music genre</p>
+      <p class="q">Create form to survey the users favourite <s>music</s> book whilst asking for their for name, phone number, and favourite <s>music</s> book genre</p>
       <p class="a">Form below:</p>
-      <form class="" name="userSurvey" method="post">
+      <form class="" action="#" name="userSurvey" method="post">
         <h5>User Survey</h5>
         <hr>
         <h6>User Information</h6> <br>
         Please enter your details bellow: <br>
         <br>
         Name: <br>
-        <input type="text" name="" value=""><br>
+        <input type="text" name="userName" value="" id="uName"><br>
         Email: <br>
-        <input type="text" name="" value=""><br>
+        <input type="text" name="eMail" value="" id="uEmail"><br>
         Phone: <br>
-        <input type="text" name="" value="">
+        <input type="text" name="phone" value="" id="uPhone">
         <hr>
+        Please Select your Favourite Genre of Book: (check all that apply)
+        <br>
+        <input type="checkbox" name="bookChoice0" value="Science Fiction"><label for="bookChoice0">Science Fiction</label>
+        <input type="checkbox" name="bookChoice1" value="Travel Guide"><label for="bookChoice1">Travel Guide</label>
+        <input type="checkbox" name="bookChoice2" value="Short Story Collection"><label for="bookChoice2">Short Story Collection</label>
+        <input type="checkbox" name="bookChoice3" value="Other"><label for="bookChoice3">Other</label>
+        <br>
+        <textarea name="summary"></textarea>
+        <p class="a" id="task1ans"></p>
+        <br>
 
+        <button type="reset" name="button">Reset</button>
+        <button type="button" name="button" onclick="submitForm()">Submit Survey</button>
+        <hr>
       </form>
     </div>
+    <div class="task1c">
+      <h3>Task 1iii - code explained, also in script as comments</h3>
+      <pre>
+        <code>
+          function validNo() //calls function
+          {
+           if (!document.userSurvey.phone.value) // if document on has no number return true
+           {
+          window.alert("Phone number missing. Please enter a valid phone number to continue."); // alert window calls with message
+           document.userSurvey.phone.focus(); //go to phone text box
+           return false; // test fail
+           }
+           else {
+               var numbersOnly = ""; //initialise variables
+               var chars = "";
+               var phoneNo = document.userSurvey.phone.value; //phone number made up using the value from textfield
+               for (i = 0; i < phoneNo.length; i++) //for loop begins
+               {
+               chars = phoneNo.substring(i,i+1); //create variable for individual characters
+                if (chars >= "0" && chars <= "9") //if character is a number
+                 {
+                 numbersOnly = numbersOnly + chars; //makes mobile number using these numbers
+                 }
+               }
+                 if (numbersOnly.length != 13) // if not correct number of digets in the phone number provided
+                 {
+                 window.alert("Incorrect phone number format.You must enter 13 numbers."); //alert if number not correct
+                 document.userSurvey.focus(); //focus on corrections
+                 return false;
+                 }
+               else
+               {  //example number "4402890366591"
+                 var areacode = numbersOnly.substring(0,2); //start of number +44
+                 var leading0 = numbersOnly.substring(2,3); // 0
+                 var exchange = numbersOnly.substring(3,5); // 28
+                 var ext1 = numbersOnly.substring(5,9); //9036
+                 var ext2 = numbersOnly.substring(9); //6591
+                 var newNumber =( "+" + areacode + " " +"(" + leading0 + ")" + exchange + " " + ext1 + "-" + ext2); // creates +44 (0) 9036-6591
+                 document.userSurvey.phone.value = newNumber; //sets as textbox value
+                 return true; //exit loop
+               }
+             }
+           } //close function
+        </code>
+      </pre>
+    </div>
+    <div class="task1e">
+      <h3>Task 1v - code explained, also in script as comments</h3>
+      <pre>
+        <code>
+          function validEmail() //call function
+          {
+           if (!document.userSurvey.eMail.value) { //if empty
+             window.alert("E-mail Address missing. Please enter a valid E-mail address to continue.");
+             document.userSurvey.eMail.focus(); //goes to problem
+             return false;
+           }
+           else // if not empty
+           {
+             var emailAddress = document.userSurvey.eMail.value; //reads in email value
+             var atLoc = emailAddress.indexOf("@",1);//states position of @ symbol
+             var dotLoc = emailAddress.indexOf(".",atLoc+2); //states postion of . after @ symbol
+             var len = emailAddress.length; //states lengh of email address
+             if (atLoc > 0 && dotLoc > 0 && len > dotLoc+2) //check @ isn't 1st character, . isn't 1st character and the length is atleast 2 more than the . after the @. (e.g. peter@hotmail.com would satisfy this)
+             {
+               return true;
+             }
+             else
+             {
+               alert("Invalid E-mail address! Please enter your email address again."); //if not true, causes error
+               document.userSurvey.eMail.focus();
+               return false;
+             }
+           }
+         } //closes function
+        </code>
+      </pre>
+    </div>
+    <div class="task2">
+      <h1>Task 2</h1>
+      <a href="../index.html">click to return to learning learninglog</a>
+    </div>
       <script language=javascript type=text/javascript>
+        function validName() {
+          var letters = /^[A-Za-z]+$/;
+          name1 = document.userSurvey.userName;
 
+          if (name1.value.match(letters)) {
+            return true;
+          }
+          else {
+            alert("Please enter a name");
+            name1.focus();
+            return false;
+          }
+        }
+
+        function validNo() //calls function
+        {
+         if (!document.userSurvey.phone.value) // if document on has no number return true
+         {
+        window.alert("Phone number missing. Please enter a valid phone number to continue."); // alert window calls with message
+         document.userSurvey.phone.focus(); //go to phone text box
+         return false; // test fail
+         }
+         else {
+             var numbersOnly = ""; //initialise variables
+             var chars = "";
+             var phoneNo = document.userSurvey.phone.value; //phone number made up using the value from textfield
+             for (i = 0; i < phoneNo.length; i++) //for loop begins
+             {
+             chars = phoneNo.substring(i,i+1); //create variable for individual characters
+              if (chars >= "0" && chars <= "9") //if character is a number
+               {
+               numbersOnly = numbersOnly + chars; //makes mobile number using these numbers
+               }
+             }
+               if (numbersOnly.length != 13) // if not correct number of digets in the phone number provided
+               {
+               window.alert("Incorrect phone number format.You must enter 13 numbers."); //alert if number not correct
+               document.userSurvey.focus(); //focus on corrections
+               return false;
+               }
+             else
+             {  //example number "4402890366591"
+               var areacode = numbersOnly.substring(0,2); //start of number +44
+               var leading0 = numbersOnly.substring(2,3); // 0
+               var exchange = numbersOnly.substring(3,5); // 28
+               var ext1 = numbersOnly.substring(5,9); //9036
+               var ext2 = numbersOnly.substring(9); //6591
+               var newNumber =( "+" + areacode + " " +"(" + leading0 + ")" + exchange + " " + ext1 + "-" + ext2); // creates +44 (0) 9036-6591
+               document.userSurvey.phone.value = newNumber; //sets as textbox value
+               return true; //exit loop
+             }
+           }
+         } //close function
+
+         function validEmail() //call function
+         {
+          if (!document.userSurvey.eMail.value) { //if empty
+            window.alert("E-mail Address missing. Please enter a valid E-mail address to continue.");
+            document.userSurvey.eMail.focus(); //goes to problem
+            return false;
+          }
+          else // if not empty
+          {
+            var emailAddress = document.userSurvey.eMail.value; //reads in email value
+            var atLoc = emailAddress.indexOf("@",1);//states position of @ symbol
+            var dotLoc = emailAddress.indexOf(".",atLoc+2); //states postion of . after @ symbol
+            var len = emailAddress.length; //states lengh of email address
+            if (atLoc > 0 && dotLoc > 0 && len > dotLoc+2) //check @ isn't 1st character, . isn't 1st character and the length is atleast 2 more than the . after the @. (e.g. peter@hotmail.com would satisfy this)
+            {
+              return true;
+            }
+            else
+            {
+              alert("Invalid E-mail address! Please enter your email address again."); //if not true, causes error
+              document.userSurvey.eMail.focus();
+              return false;
+            }
+          }
+        } //closes function
+
+        function validChoice()
+        {
+          var bookChoice = "";
+          var x= "";
+          for (i=0;i< 4;i++)
+          {
+            if (document.userSurvey['bookChoice'+i].checked)
+            {
+              bookChoice = document.userSurvey['bookChoice'+i].value;
+              x = x +"\n"+ bookChoice; //"\n" output a newline
+            }
+          }
+          if (bookChoice == "")
+          {
+            window.alert("You must select at least one book category.");
+            document.userSurvey['bookChoice0'].focus();//insert a statement missing here
+            //goes to issue
+          }
+          else
+          {
+            var userName = document.userSurvey.userName.value;
+            var eMail = document.userSurvey.eMail.value;
+            var phoneNo = document.userSurvey.phone.value;
+            //insert a statement here so that the values of username, email, phoneNo and the book selected will be display in the textarea;
+            document.userSurvey.summary.value = userName + "," + eMail + "," + phoneNo + " " + x;
+         return true;
+         }
+        }
+        function validAll() {
+          if(validName() && validNo() && validEmail() && validChoice())
+            return true;
+          else
+            return false;
+        }
+
+        function submitForm() {
+          ans = document.getElementById("task1ans");
+
+          if(validAll())
+            ans.innerHTML = "Thank You";
+          else {
+            ans.innerHTML = "Validation Failed";
+          }
+
+        } //
       </script>
 
   </body>
