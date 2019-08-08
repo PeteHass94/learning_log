@@ -10,12 +10,68 @@
     <h1>Practical 1, sheet Practical 10: Image Swaps and Banner</h1>
     <div class="task1">
       <h3 class="">Task 1 - Image Rollovers</h3>
-      <p class="q"></p>
+      <p class="q">Creating  an image to roll over</p>
+      <h4>My Favourite Website</h4>
+      <div class="imageArea" >
+        <a href="../index.html">
+          <img id="roll" src="../media/Arsenal1.jpg" alt="">
+        </a>
+      </div>
       <p class="a"></p>
     </div>
       <script language=javascript type=text/javascript>
-
+      document.getElementById("roll").addEventListener("mouseover", imageRoll);
+      document.getElementById("roll").addEventListener("mouseout", imageRoll);
+      function imageRoll(){
+        source = this.src;
+        source = source[source.length -5];
+        source++;
+        source = source % 5;
+        this.src = "../media/Arsenal" + source + ".jpg"
+      }
       </script>
+      <div class="task2">
+        <h3 class="">Task 2 - Slideshow</h3>
+        <p class="q">Creating  an image to roll over by clicking aka slideshow</p>
+        <h4>My Favourite Website</h4>
+        <div class="imageArea">
+            <img id="roll2" src="../media/Arsenal1.jpg" alt="">
+        </div>
+        <p class="a"></p>
+      </div>
+        <script language=javascript type=text/javascript>
+        document.getElementById("roll2").addEventListener("click", slideshow);
+        function slideshow(){
+          source = this.src;
+          source = source[source.length -5];
+          source++;
+          source = source % 5;
+          this.src = "../media/Arsenal" + source + ".jpg"
+        }
+        </script>
+      <div class="task3">
+        <h3 class="">Task 3 - Animated advertising banner</h3>
+        <p class="q">Creating  an image to roll over on a timer</p>
+        <h4>My Favourite Website</h4>
+        <div class="imageArea">
+          <a href="../index.html">
+            <img id="roll3" src="../media/Arsenal1.jpg" alt="">
+          </a>
+        </div>
+        <p class="a"></p>
+      </div>
+        <script language=javascript type=text/javascript>
+        document.onload = setInterval(banner, 1000);
+
+        function banner(){
+          roll = document.getElementById("roll3");
+          source = roll.src;
+          source = source[source.length -5];
+          source++;
+          source = source % 5;
+          roll.src = "../media/Arsenal" + source + ".jpg"
+        }
+        </script>
 
   </body>
 </html>
