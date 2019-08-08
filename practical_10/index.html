@@ -1,4 +1,4 @@
-&lt&lt<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -14,32 +14,32 @@
       <form name="onlineQuiz" class="" action="" method="post">
         <h1>Online Quiz on  XHTML</h1>
         <h3>Question 1: What does XHTML stand for?</h3>
-        <select name="" id="question1">
-          <option>Extreme HyperText Markup Language</option>
-          <option>Extensible HyperText Marking Language</option>
-          <option>Extensible HyperText Markup Language</option>
-          <option>Extra Hyperlinks and Text Markup Language</option>
+        <select name="q1" id="question1">
+          <option value="1">Extreme HyperText Markup Language</option>
+          <option value="2">Extensible HyperText Marking Language</option>
+          <option value="3">Extensible HyperText Markup Language</option>
+          <option value="4">Extra Hyperlinks and Text Markup Language</option>
         </select>
         <h3>What is the correct XHTML for a paragraph?</h3>
-        <select id="question2">
-          <option>&lt/p&gt&ltp&gt</option>
-          <option>&ltp&gt&lt/p&gt</option>
-          <option>&ltP&gt&lt/p&gt</option>
-          <option>&ltP&gt&lt/p&gt</option>
+        <select name="q2" id="question2">
+          <option value="1">&lt/p&gt&ltp&gt</option>
+          <option value="2">&ltp&gt&lt/p&gt</option>
+          <option value="3">&ltP&gt&lt/p&gt</option>
+          <option value="4">&ltP&gt&lt/p&gt</option>
         </select>
         <h3> What is correct XHTML for a line break?</h3>
-        <select id="question3">
-          <option>&ltbreak/&gt</option>
-          <option>&ltbr /&gt</option>
-          <option>&ltbr&gt</option>
+        <select name="q3" id="question3">
+          <option value="1">&ltbreak/&gt</option>
+          <option value="2">&ltbr /&gt</option>
+          <option value="3">&ltbr&gt</option>
         </select>
         <hr>
-        <button type="button" name="button">Check Answers</button>
+        <button type="button" name="button" onclick="checkScore()">Check Answers</button>
         <p class="a">Your Score:</p>
-        <input type="text" name="score" value="">
+        <input type="text" name="score" value="" id="scoreDisplay"
       </form>
 
-      <p class="a"></p>
+      <p class="a" id="task1"></p>
     </div>
       <script type="text/javascript" src="../js/myjslib.js"></script>
 
