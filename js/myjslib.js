@@ -42,11 +42,11 @@ function checkScore() {
   console.log(getSelectValue("onlineQuiz","2"));
 
   if (getSelectValue("onlineQuiz","q1") == answers[0])
-    points = +points + +1;
+    points += +1;
   if (getSelectValue("onlineQuiz","q2") == answers[1])
-      points = +points + +1;
+      points += +1;
   if (getSelectValue("onlineQuiz","q3") == answers[2])
-    points = +points + +1;
+    points += +1;
 
   document.getElementById("scoreDisplay").value = points;
   if (points == 3)

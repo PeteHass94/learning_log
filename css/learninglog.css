@@ -59,6 +59,10 @@ main {
   flex-direction: column;
   flex-wrap: wrap;
 }
+.week p {
+  display: flex;
+  flex-wrap: wrap;
+}
 #learninglog .week a {
   margin: 0.5em 1em;
   padding: 1em;
