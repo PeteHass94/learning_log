@@ -12,68 +12,70 @@
       <h3 class="">Task 1 - Loops</h3>
       <p class="q">Count up from 1 to 5</p>
       <button type="button" name="button" onclick="forCountUp1to5()">Count up using For loop</button>
-      <p class="a"></p>
+      <p class="a" id="task1a"></p>
     </div>
       <script language=javascript type=text/javascript>
         function forCountUp1to5() {
-          window.document.write("Using for loop <br>Start the counting:<br>");
+          text = "Using for loop <br>Start the counting:<br>";
           for (i = 1; i <= 5; i++)
           {
-              window.document.write("Counter i = " + i + "<br>");
+              text = text + "Counter i = " + i + "<br>";
           }
-            window.document.write("Counting is complete!");
+            document.getElementById("task1a").innerHTML = text + "Counting is complete!";
         }
       </script>
     <div class="task1b">
       <h3 class="">Task 1 - Loops</h3>
       <p class="q">Count up from 1 to 5</p>
       <button type="button" name="button" onclick="whileCountUp1to5()">Count up using While loop</button>
-      <p class="a"></p>
+      <p class="a" id="task1b"></p>
     </div>
       <script language=javascript type=text/javascript>
         function whileCountUp1to5() {
-          window.document.write("Using while loop <br>Start the counting:<br>");
+          text = "Using while loop <br>Start the counting:<br>";
           var i = 1;
           while (i <= 5)
           {
-              window.document.write("Counter i = " + i + "<br>");
+              text = text + "Counter i = " + i + "<br>";
               i++;
+
           }
-            window.document.write("Counting is complete!");
+            document.getElementById("task1b").innerHTML = text + "Counting is complete!";
         }
       </script>
       <div class="task1c">
         <h3 class="">Task 1 - Loops</h3>
         <p class="q">Count up from 1 to 5</p>
         <button type="button" name="button" onclick="doCountUp1to5()">Count up using Do While loop</button>
-        <p class="a"></p>
+        <p class="a" id="task1c"></p>
       </div>
         <script language=javascript type=text/javascript>
           function doCountUp1to5() {
-            window.document.write("Using do while loop <br>Start the counting:<br>");
+            text = "Using while loop <br>Start the counting:<br>";
             var i = 1;
             do
             {
-                window.document.write("Counter i = " + i + "<br>");
+                text = text + "Counter i = " + i + "<br>";
                 i++;
-            } while (i <= 5);
-              window.document.write("Counting is complete!");
+
+            } while (i <= 5)
+              document.getElementById("task1c").innerHTML = text + "Counting is complete!";
           }
         </script>
       <div class="task1d">
         <h3 class="">Task 1 - Loops</h3>
         <p class="q">Count down from 5 to 1</p>
         <button type="button" name="button" onclick="forCountDown5to1()">Count down using for loop</button>
-        <p class="a"></p>
+        <p class="a" id="task1d"></p>
       </div>
         <script language=javascript type=text/javascript>
           function forCountDown5to1() {
-            window.document.write("Using for loop <br>Start the counting:<br>");
+            text = "Using while loop <br>Start the counting:<br>";
             for (i = 5; i>=1; i--)
             {
-                window.document.write("Counter i = " + i + "<br>");
+                text = text + "Counter i = " + i + "<br>";
             }
-              window.document.write("Counting is complete!");
+              document.getElementById("task1d").innerHTML = text + "Counting is complete!";
           }
         </script>
       <div class="task1e">
@@ -84,17 +86,17 @@
         <button type="button" name="button" onclick="forCountDown()">Count down using for loop</button>
         <br>
         <br>
-        <p class="a"></p>
+        <p class="a" id="task1e"></p>
       </div>
         <script language=javascript type=text/javascript>
           function forCountDown() {
             number= document.getElementById("number").value;
-            window.document.write("Using for loop <br>Start the counting:<br>");
+            text = "Using while loop <br>Start the counting:<br>";
             for (var i = number; i>=1; i--)
             {
-                window.document.write("Counter i = " + i + "<br>");
+                text = text + "Counter i = " + i + "<br>";
             }
-              window.document.write("Counting is complete!");
+              document.getElementById("task1e").innerHTML = text + "Counting is complete!";
           }
         </script>
       <div class="task2a">
@@ -103,10 +105,7 @@
       </div>
         <script language=javascript type=text/javascript>
           function displayCourse() {
-
-
             var course = [ "Software Engineering", "Computer Science", "Interactive Multimedia Design", "Information Communication Technology"];
-
             window.document.write("<p>Courses offered here: <br>")
             for (i=0; i<=3; i++)
             {
@@ -137,6 +136,7 @@
               radios[i].innerHTML = universities[i];
             }
           }
+          window.onload = uniSelect();
         </script>
       <div class="task2c">
         <h3 class="">Task 2 - Loops with arrays</h3>
@@ -157,12 +157,12 @@
           <button type="button" name="button">Show Information</button>
         </form>
         <script  language=javascript type="text/javascript">
-          function uniSelect(){
+          function uni1Select(){
             var universities = ["Ulster University", "Queen's University"];
-            var radios = document.getElementsByName("uni1");
+            var radios1 = document.getElementsByName("uni1");
             for (i = 0; i < universities.length; i++)
             {
-              radios[i].innerHTML = universities[i];
+              radios1[i].innerHTML = universities[i];
             }
           }
           function campusSelect(){
@@ -173,7 +173,7 @@
               checkboxes[i].innerHTML = campus[i];
             }
           }
-          window.onload = uniSelect();
+          window.onload = uni1Select();
           window.onload = campusSelect();
         </script>
         <div class="task3">

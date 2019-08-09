@@ -20,7 +20,8 @@ function newWelcomeTex() {
   campus =campus.options[campus.selectedIndex].text;
   course = document.getElementById("course");
   course = course.options[course.selectedIndex].text;
-  window.document.write(name + " from " + uni + " studying " + course + " at " + campus + ", Welcome to JavaScript homepage!");
+  //window.document.write(name + " from " + uni + " studying " + course + " at " + campus + ", Welcome to JavaScript homepage!");
+  document.getElementById("p4task2").innerHTML = name + " from " + uni + " studying " + course + " at " + campus + ", Welcome to JavaScript homepage!";
 }
 // practical 9
 
